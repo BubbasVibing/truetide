@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livelihood</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="logo">
+        <img src="waveslogo.jpg" alt="Logo">
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">
+              <i class="fas fa-house nav-icon"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="productivity.html">
+              <i class="fas fa-tasks nav-icon"></i>
+              <span class="nav-text">Productivity</span>
+            </a>
+          </li>
+          <li>
+            <a href="livelihood.html">
+              <i class="fas fa-heart nav-icon"></i>
+              <span class="nav-text">Livelihood</span>
+            </a>
+          </li>
+          <li>
+            <a href="my-agent.html">
+              <i class="fas fa-user nav-icon"></i>
+              <span class="nav-text">My Agent</span>
+            </a>
+          </li>
+          <li>
+            <a href="health.html">
+              <i class="fas fa-heartbeat nav-icon"></i>
+              <span class="nav-text">Health</span>
+            </a>
+          </li>
+          <li>
+            <a href="report.html">
+              <i class="fas fa-file-alt nav-icon"></i>
+              <span class="nav-text">Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html">
+              <i class="fas fa-gear nav-icon"></i>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="header">
+        <h1 style="color: #333333;">Life Balance</h1>
+        <p class="date" style="color: #666666;">Today's Date: <span id="currentDate"></span></p>
+      </header>
+
+      <section class="dashboard-grid">
+        <!-- Life Balance Score -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Balance Score</h3>
+          <div class="progress-circle">
+            <span class="percentage" style="color: #055ffc;">82%</span>
+          </div>
+          <p class="subtext" style="color: #666666;">Overall Life Balance Rating</p>
+        </div>
+
+        <!-- Add this after the Life Balance Score section -->
+
+        <div class="card glass-effect" style="grid-column: span 2;">
+            <h3 style="color: #055ffc;">Task Progression</h3>
+            <div class="chart-container" style="position: relative; height: 300px;">
+                <canvas id="taskProgressChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Work-Life Balance -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Work-Life Balance</h3>
+          <div class="balance-metrics">
+            <div class="metric">
+              <i class="fas fa-briefcase" style="color: #055ffc;"></i>
+              <span>42 hrs</span>
+              <p class="subtext" style="color: #666666;">Work Time</p>
+            </div>
+            <div class="metric">
+              <i class="fas fa-heart" style="color: #055ffc;"></i>
+              <span>38 hrs</span>
+              <p class="subtext" style="color: #666666;">Personal Time</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wellness Activities -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Weekly Activities</h3>
+          <ul class="activity-list">
+            <li>
+              <span class="activity-name">Meditation</span>
+              <span class="activity-time" style="color: #055ffc;">3 sessions</span>
+            </li>
+            <li>
+              <span class="activity-name">Exercise</span>
+              <span class="activity-time" style="color: #055ffc;">4 sessions</span>
+            </li>
+            <li>
+              <span class="activity-name">Family Time</span>
+              <span class="activity-time" style="color: #055ffc;">12 hours</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Stress Levels -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Stress Management</h3>
+          <div class="stress-meter">
+            <span class="stress-level" style="color: #055ffc;">Low</span>
+            <div class="meter-bar">
+              <div class="bar-fill" style="width: 30%; background-color: #055ffc;"></div>
+            </div>
+          </div>
+          <p class="subtext" style="color: #666666;">Weekly Stress Assessment</p>
+        </div>
+
+        <!-- Life Goals -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Life Goals Progress</h3>
+          <div class="goals-list">
+            <div class="goal-item">
+              <span class="goal-name">Career Development</span>
+              <div class="goal-progress">
+                <div class="progress-bar" style="width: 65%; background-color: #055ffc;"></div>
+              </div>
+            </div>
+            <div class="goal-item">
+              <span class="goal-name">Personal Growth</span>
+              <div class="goal-progress">
+                <div class="progress-bar" style="width: 80%; background-color: #055ffc;"></div>
+              </div>
+            </div>
+            <div class="goal-item">
+              <span class="goal-name">Financial Goals</span>
+              <div class="goal-progress">
+                <div class="progress-bar" style="width: 45%; background-color: #055ffc;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Notes -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Personal Notes</h3>
+          <div class="notes-section">
+            <textarea placeholder="Add a personal note..." class="note-input"></textarea>
+            <button class="action-btn">
+              <i class="fas fa-save"></i> Save Note
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      const icon = sidebarToggle.querySelector('i');
+      if (sidebar.classList.contains('collapsed')) {
+        icon.classList.replace('fa-chevron-left', 'fa-chevron-right');
+      } else {
+        icon.classList.replace('fa-chevron-right', 'fa-chevron-left');
+      }
+    });
+
+    // Set current date
+    const currentDate = new Date().toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    document.getElementById('currentDate').textContent = currentDate;
+  </script>
+
+  <!-- Add this script section at the bottom of your file, before the closing body tag -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Task Progress Chart
+    const ctx = document.getElementById('taskProgressChart').getContext('2d');
+    const taskProgressChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+            datasets: [{
+                label: 'Tasks Completed',
+                data: [65, 75, 70, 85, 80, 90, 88, 95],
+                borderColor: '#055ffc',
+                backgroundColor: 'rgba(5, 95, 252, 0.1)',
+                borderWidth: 3,
+                pointBackgroundColor: '#055ffc',
+                pointBorderColor: '#FFFFFF',
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                fill: true,
+                tension: 0.4,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: '#666666',
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        },
+                    },
+                    border: {
+                        color: '#CCCCCC',
+                        width: 2,
+                    },
+                },
+                y: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: '#666666',
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        },
+                        callback: function(value) {
+                            return value + '%';
+                        },
+                    },
+                    border: {
+                        color: '#CCCCCC',
+                        width: 2,
+                    },
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#333333',
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        },
+                        usePointStyle: false,
+                        boxWidth: 0,
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#FFFFFF',
+                    titleColor: '#055ffc',
+                    bodyColor: '#333333',
+                    borderColor: '#055ffc',
+                    borderWidth: 1,
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                }
+            }
+        }
+    });
+  </script>
+
+  <style>
+    .chart-container {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 15px;
+    }
+  </style>
+</body>
+</html>

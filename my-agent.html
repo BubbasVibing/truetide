@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Agent</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="agent-status-profile">
+    <div class="profile-wrapper">
+        <div class="status-avatar" onclick="toggleProfileMenu()">
+            <i class="fas fa-user-circle"></i>
+            <span class="status-indicator"></span>
+        </div>
+        <div class="profile-dropdown" id="profileMenu">
+            <div class="profile-header">
+                <h4 id="agentName">TrueTide Assistant</h4>
+                <span class="status-badge">Online</span>
+            </div>
+            <div class="profile-actions">
+                <button class="profile-btn" onclick="togglePersonalization()">
+                    <i class="fas fa-pen"></i>
+                    Customize Agent
+                </button>
+            </div>
+            
+            <!-- Personalization Panel (Hidden by default) -->
+            <div class="personalization-panel" id="personalizationPanel" style="display: none;">
+                <div class="panel-section">
+                    <label>Agent Name</label>
+                    <div class="custom-input">
+                        <input type="text" class="name-input" value="TrueTide Assistant" placeholder="Enter agent name">
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <label>Voice Selection</label>
+                    <div class="custom-select">
+                        <select class="setting-select">
+                            <option>Emma (US Female)</option>
+                            <option>James (US Male)</option>
+                            <option>Sophie (UK Female)</option>
+                            <option>William (UK Male)</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <button class="save-btn">
+                    <i class="fas fa-check"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="logo">
+        <img src="waveslogo.jpg" alt="Logo">
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">
+              <i class="fas fa-house nav-icon"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="productivity.html">
+              <i class="fas fa-tasks nav-icon"></i>
+              <span class="nav-text">Productivity</span>
+            </a>
+          </li>
+          <li>
+            <a href="livelihood.html">
+              <i class="fas fa-heart nav-icon"></i>
+              <span class="nav-text">Livelihood</span>
+            </a>
+          </li>
+          <li>
+            <a href="my-agent.html">
+              <i class="fas fa-user nav-icon"></i>
+              <span class="nav-text">My Agent</span>
+            </a>
+          </li>
+          <li>
+            <a href="health.html">
+              <i class="fas fa-heartbeat nav-icon"></i>
+              <span class="nav-text">Health</span>
+            </a>
+          </li>
+          <li>
+            <a href="report.html">
+              <i class="fas fa-file-alt nav-icon"></i>
+              <span class="nav-text">Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html">
+              <i class="fas fa-gear nav-icon"></i>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="header">
+        <h1 style="color: #333333;">My Personal Agent</h1>
+        <p class="date" style="color: #666666;">Today's Date: <span id="currentDate"></span></p>
+      </header>
+
+      <section class="dashboard-grid">
+        <!-- Chat Interface -->
+        <div class="card glass-effect" style="grid-column: span 2;">
+          <h3 style="color: #055ffc;">Chat with Your Agent</h3>
+          <div class="chat-container">
+            <div class="chat-messages">
+              <div class="message agent">
+                <div class="avatar">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="message-content">
+                  <div class="message-header">
+                    <span class="agent-name">TrueTide Assistant</span>
+                    <div class="message-actions">
+                      <button class="action-icon"><i class="fas fa-copy"></i></button>
+                      <button class="action-icon"><i class="fas fa-thumbs-up"></i></button>
+                    </div>
+                  </div>
+                  <p>Hello! How can I assist you today?</p>
+                </div>
+              </div>
+
+              <div class="message user">
+                <div class="message-content">
+                  <div class="message-header">
+                    <span class="user-name">You</span>
+                    <div class="message-actions">
+                      <button class="action-icon"><i class="fas fa-edit"></i></button>
+                    </div>
+                  </div>
+                  <p>Can you help me with my schedule today?</p>
+                </div>
+                <div class="avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+
+              <div class="message agent">
+                <div class="avatar">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="message-content">
+                  <div class="message-header">
+                    <span class="agent-name">TrueTide Assistant</span>
+                    <div class="message-actions">
+                      <button class="action-icon"><i class="fas fa-copy"></i></button>
+                      <button class="action-icon"><i class="fas fa-thumbs-up"></i></button>
+                    </div>
+                  </div>
+                  <p>Of course! I see you have 3 meetings scheduled. Would you like me to summarize them?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-container">
+              <div class="chat-input-wrapper">
+                <textarea class="chat-input" placeholder="Message TrueTide Assistant..." rows="1"></textarea>
+                <button class="send-button">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+              <div class="input-info">
+                <span class="info-text">TrueTide Assistant can help manage your schedule, set reminders, and more.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent Activity Log - Now positioned to the right -->
+        <div class="card glass-effect" style="grid-column: span 1;">
+            <h3 style="color: #055ffc;">Agent Activity Log</h3>
+            <div class="activity-log">
+                <div class="log-filters">
+                    <button class="filter-btn active">All Activities</button>
+                    <button class="filter-btn">Scheduled</button>
+                    <button class="filter-btn">Completed</button>
+                </div>
+
+                <div class="log-entries">
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <span class="time">10:30 AM</span>
+                            <span class="date">Today</span>
+                        </div>
+                        <div class="log-content">
+                            <div class="log-icon">
+                                <i class="fas fa-calendar-check" style="color: #27ae60;"></i>
+                            </div>
+                            <div class="log-details">
+                                <p class="log-title">Meeting Scheduled</p>
+                                <p class="log-description">Scheduled team review meeting for tomorrow at 2 PM</p>
+                                <div class="log-meta">
+                                    <span class="meta-tag">Calendar</span>
+                                    <span class="meta-status">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <span class="time">9:15 AM</span>
+                            <span class="date">Today</span>
+                        </div>
+                        <div class="log-content">
+                            <div class="log-icon">
+                                <i class="fas fa-bell" style="color: #e67e22;"></i>
+                            </div>
+                            <div class="log-details">
+                                <p class="log-title">Reminder Set</p>
+                                <p class="log-description">Set reminder for project deadline on Friday</p>
+                                <div class="log-meta">
+                                    <span class="meta-tag">Reminder</span>
+                                    <span class="meta-status">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <span class="time">4:45 PM</span>
+                            <span class="date">Yesterday</span>
+                        </div>
+                        <div class="log-content">
+                            <div class="log-icon">
+                                <i class="fas fa-envelope" style="color: #055ffc;"></i>
+                            </div>
+                            <div class="log-details">
+                                <p class="log-title">Email Response</p>
+                                <p class="log-description">Drafted and sent meeting summary to team</p>
+                                <div class="log-meta">
+                                    <span class="meta-tag">Email</span>
+                                    <span class="meta-status">Sent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <span class="time">2:30 PM</span>
+                            <span class="date">Yesterday</span>
+                        </div>
+                        <div class="log-content">
+                            <div class="log-icon">
+                                <i class="fas fa-tasks" style="color: #9b59b6;"></i>
+                            </div>
+                            <div class="log-details">
+                                <p class="log-title">Task Updated</p>
+                                <p class="log-description">Updated project timeline based on team feedback</p>
+                                <div class="log-meta">
+                                    <span class="meta-tag">Tasks</span>
+                                    <span class="meta-status">Updated</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agent Preferences - Now full width below -->
+        <div class="card glass-effect preferences-card" style="grid-column: span 3;">
+            <div class="preferences-header">
+                <h3 style="color: #055ffc;">Agent Preferences</h3>
+                <button class="minimize-btn" onclick="togglePreferences()">
+                    <i class="fas fa-chevron-up" id="preferencesIcon"></i>
+                </button>
+            </div>
+            <div class="preferences-container" id="preferencesContent">
+                <!-- Communication Preferences -->
+                <div class="preference-section">
+                    <h4>Communication Methods</h4>
+                    <div class="toggle-group">
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Email Notifications</span>
+                        </div>
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>SMS Alerts</span>
+                        </div>
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Phone Calls</span>
+                        </div>
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Push Notifications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation Settings -->
+                <div class="preference-section">
+                    <h4>Automated Tasks</h4>
+                    <div class="toggle-group">
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Meeting Scheduling</span>
+                        </div>
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Task Reminders</span>
+                        </div>
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Calendar Management</span>
+                        </div>
+                        <div class="toggle-item">
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Email Response Drafts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reminder Settings -->
+                <div class="preference-section">
+                    <h4>Reminder Preferences</h4>
+                    <div class="settings-group">
+                        <div class="setting-item">
+                            <span>Reminder Timing</span>
+                            <div class="custom-select">
+                                <select class="setting-select">
+                                    <option>30 minutes before</option>
+                                    <option>1 hour before</option>
+                                    <option>2 hours before</option>
+                                    <option>1 day before</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <span>Reminder Frequency</span>
+                            <div class="custom-select">
+                                <select class="setting-select">
+                                    <option>Once only</option>
+                                    <option>Every 15 minutes</option>
+                                    <option>Every 30 minutes</option>
+                                    <option>Every hour</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority Settings -->
+                <div class="preference-section">
+                    <h4>Priority & Response</h4>
+                    <div class="settings-group">
+                        <div class="setting-item">
+                            <span>Notification Priority</span>
+                            <select class="setting-select">
+                                <option>High Priority Only</option>
+                                <option>Medium and High</option>
+                                <option>All Updates</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <span>Response Style</span>
+                            <select class="setting-select">
+                                <option>Professional</option>
+                                <option>Casual</option>
+                                <option>Concise</option>
+                                <option>Detailed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      const icon = sidebarToggle.querySelector('i');
+      if (sidebar.classList.contains('collapsed')) {
+        icon.classList.replace('fa-chevron-left', 'fa-chevron-right');
+      } else {
+        icon.classList.replace('fa-chevron-right', 'fa-chevron-left');
+      }
+    });
+
+    // Set current date
+    const currentDate = new Date().toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    document.getElementById('currentDate').textContent = currentDate;
+
+    function toggleProfileMenu() {
+        const menu = document.getElementById('profileMenu');
+        menu.classList.toggle('active');
+    }
+
+    function togglePersonalization() {
+        const panel = document.getElementById('personalizationPanel');
+        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const profile = document.querySelector('.agent-status-profile');
+        const menu = document.getElementById('profileMenu');
+        if (!profile.contains(event.target)) {
+            menu.classList.remove('active');
+        }
+    });
+
+    document.querySelector('.save-btn').addEventListener('click', function() {
+        const newName = document.querySelector('.name-input').value;
+        document.getElementById('agentName').textContent = newName;
+        document.getElementById('personalizationPanel').style.display = 'none';
+    });
+
+    function togglePreferences() {
+        const content = document.getElementById('preferencesContent');
+        const icon = document.getElementById('preferencesIcon');
+        const btn = icon.parentElement;
+        const card = document.querySelector('.preferences-card');
+        
+        content.classList.toggle('minimized');
+        btn.classList.toggle('minimized');
+        card.classList.toggle('minimized');
+    }
+  </script>
+
+  <style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        align-items: start;
+    }
+
+    .preferences-card {
+        transition: all 0.3s ease-out;
+        overflow: hidden;
+    }
+
+    .preferences-card.minimized {
+        max-height: 70px;
+        min-height: 70px;
+    }
+
+    .preferences-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .minimize-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .minimize-btn:hover {
+        background: rgba(5, 95, 252, 0.2);
+    }
+
+    .minimize-btn i {
+        transition: transform 0.3s ease;
+    }
+
+    .minimize-btn.minimized i {
+        transform: rotate(180deg);
+    }
+
+    .preferences-container {
+        transition: all 0.3s ease-out;
+        opacity: 1;
+        height: auto;
+    }
+
+    .preferences-container.minimized {
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .status-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .edit-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 15px;
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+
+    .edit-btn:hover {
+        background: rgba(5, 95, 252, 0.2);
+        transform: translateY(-1px);
+    }
+
+    .personalization-panel {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(5, 95, 252, 0.1);
+    }
+
+    .panel-section {
+        margin-bottom: 15px;
+    }
+
+    .panel-section label {
+        display: block;
+        color: #666666;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    .custom-input {
+        position: relative;
+    }
+
+    .name-input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 2px solid rgba(5, 95, 252, 0.1);
+        border-radius: 8px;
+        background: white;
+        color: #333333;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+
+    .name-input:hover {
+        border-color: rgba(5, 95, 252, 0.3);
+    }
+
+    .name-input:focus {
+        outline: none;
+        border-color: #055ffc;
+        box-shadow: 0 0 0 3px rgba(5, 95, 252, 0.1);
+    }
+
+    .save-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #055ffc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .save-btn:hover {
+        background: #0446be;
+        transform: translateY(-1px);
+    }
+
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+    }
+
+    .chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .message {
+        display: flex;
+        gap: 16px;
+        max-width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+        transition: background-color 0.3s ease;
+    }
+
+    .message:hover {
+        background-color: rgba(5, 95, 252, 0.02);
+    }
+
+    .message.agent {
+        background-color: rgba(247, 247, 248, 0.7);
+    }
+
+    .avatar {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+    }
+
+    .message-content {
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    .message-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .agent-name, .user-name {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #333333;
+    }
+
+    .message-actions {
+        display: flex;
+        gap: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .message:hover .message-actions {
+        opacity: 1;
+    }
+
+    .action-icon {
+        background: none;
+        border: none;
+        color: #666666;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .action-icon:hover {
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+    }
+
+    .message p {
+        margin: 0;
+        line-height: 1.5;
+        color: #333333;
+    }
+
+    .chat-input-container {
+        padding: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-input-wrapper {
+        position: relative;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-input {
+        width: 100%;
+        padding: 16px;
+        padding-right: 50px;
+        border: none;
+        border-radius: 12px;
+        resize: none;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #333333;
+    }
+
+    .chat-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(5, 95, 252, 0.2);
+    }
+
+    .send-button {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        background: #055ffc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .send-button:hover {
+        background: #0446be;
+        transform: translateY(-1px);
+    }
+
+    .input-info {
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .info-text {
+        font-size: 0.9rem;
+        color: #666666;
+    }
+
+    .activity-log {
+        height: 600px;
+        overflow-y: auto;
+    }
+
+    .log-filters {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(5, 95, 252, 0.1);
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(5, 95, 252, 0.05);
+        color: #666666;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+
+    .filter-btn.active {
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+        font-weight: 500;
+    }
+
+    .filter-btn:hover {
+        background: rgba(5, 95, 252, 0.15);
+    }
+
+    .log-entries {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    .log-entry {
+        display: flex;
+        gap: 15px;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .log-entry:hover {
+        background: rgba(5, 95, 252, 0.02);
+        transform: translateX(5px);
+    }
+
+    .log-time {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        min-width: 85px;
+    }
+
+    .time {
+        font-weight: 500;
+        color: #333333;
+        font-size: 0.9rem;
+    }
+
+    .date {
+        color: #666666;
+        font-size: 0.8rem;
+    }
+
+    .log-content {
+        display: flex;
+        gap: 15px;
+        flex-grow: 1;
+    }
+
+    .log-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: rgba(5, 95, 252, 0.05);
+        border-radius: 8px;
+    }
+
+    .log-details {
+        flex-grow: 1;
+    }
+
+    .log-title {
+        margin: 0;
+        font-weight: 500;
+        color: #333333;
+    }
+
+    .log-description {
+        margin: 5px 0;
+        color: #666666;
+        font-size: 0.9rem;
+    }
+
+    .log-meta {
+        display: flex;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .meta-tag, .meta-status {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+
+    .meta-tag {
+        background: rgba(5, 95, 252, 0.05);
+        color: #055ffc;
+    }
+
+    .meta-status {
+        background: rgba(39, 174, 96, 0.1);
+        color: #27ae60;
+    }
+
+    .preference-section {
+        margin-bottom: 25px;
+    }
+
+    .preference-section h4 {
+        color: #333333;
+        margin-bottom: 15px;
+    }
+
+    .toggle-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .toggle-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .toggle {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 24px;
+    }
+
+    .toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #e0e0e0;
+        transition: .3s;
+        border-radius: 24px;
+    }
+
+    .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .3s;
+        border-radius: 50%;
+    }
+
+    .toggle input:checked + .toggle-slider {
+        background-color: #055ffc;
+    }
+
+    .toggle input:checked + .toggle-slider:before {
+        transform: translateX(24px);
+    }
+
+    .settings-group {
+        display: grid;
+        gap: 15px;
+    }
+
+    .setting-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 8px;
+    }
+
+    .custom-select {
+        position: relative;
+        min-width: 200px;
+    }
+
+    .custom-select i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #055ffc;
+        pointer-events: none;
+    }
+
+    .setting-select {
+        width: 100%;
+        padding: 8px 35px 8px 15px;
+        border: 1px solid rgba(5, 95, 252, 0.2);
+        border-radius: 6px;
+        background: white;
+        color: #333333;
+        appearance: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .setting-select:hover {
+        border-color: #055ffc;
+    }
+
+    .setting-select:focus {
+        outline: none;
+        border-color: #055ffc;
+        box-shadow: 0 0 0 2px rgba(5, 95, 252, 0.1);
+    }
+
+    .agent-status-profile {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .profile-wrapper {
+        position: relative;
+    }
+
+    .status-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .status-avatar:hover {
+        background: rgba(5, 95, 252, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .status-avatar i {
+        font-size: 1.8rem;
+    }
+
+    .status-indicator {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        width: 12px;
+        height: 12px;
+        background-color: #27ae60;
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+
+    .profile-dropdown {
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 300px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: none;
+        animation: slideDown 0.3s ease;
+    }
+
+    .profile-dropdown.active {
+        display: block;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .profile-header h4 {
+        margin: 0;
+        color: #333333;
+    }
+
+    .status-badge {
+        padding: 4px 8px;
+        background-color: rgba(39, 174, 96, 0.1);
+        color: #27ae60;
+        border-radius: 6px;
+        font-size: 0.8rem;
+    }
+
+    .profile-actions {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: rgba(5, 95, 252, 0.1);
+        color: #055ffc;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .profile-btn:hover {
+        background: rgba(5, 95, 252, 0.2);
+    }
+
+    .personalization-panel {
+        margin-top: 15px;
+    }
+
+    .panel-section {
+        margin-bottom: 15px;
+    }
+
+    .panel-section label {
+        display: block;
+        color: #666666;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    .custom-input input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+
+    .custom-select {
+        position: relative;
+    }
+
+    .custom-select select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        font-size: 0.9rem;
+        appearance: none;
+        background: white;
+    }
+
+    .custom-select i {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666666;
+        pointer-events: none;
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 10px;
+        background: #055ffc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+
+    .save-btn:hover {
+        background: #0446be;
+    }
+  </style>
+</body>
+</html>

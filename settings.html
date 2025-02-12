@@ -5,26 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Settings</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-chevron-left"></i>
+      </button>
       <div class="logo">
-        <a href="index.html">
-          <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo">
-        </a>
+        <img src="waveslogo.jpg" alt="Logo">
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="analytics.html">Analytics</a></li>
-          <li><a href="consultation.html">Consultation</a></li>
-          <li><a href="mental-health.html">Mental Health</a></li>
-          <li><a href="religion.html">Religion</a></li>
-          <li><a href="academics.html">Academics</a></li>
-          <li><a href="occupation.html">Occupation</a></li>
-          <li><a href="settings.html">Settings</a></li>
+          <li>
+            <a href="index.html">
+              <i class="fas fa-house nav-icon"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="productivity.html">
+              <i class="fas fa-tasks nav-icon"></i>
+              <span class="nav-text">Productivity</span>
+            </a>
+          </li>
+          <li>
+            <a href="livelihood.html">
+              <i class="fas fa-heart nav-icon"></i>
+              <span class="nav-text">Livelihood</span>
+            </a>
+          </li>
+          <li>
+            <a href="my-agent.html">
+              <i class="fas fa-user nav-icon"></i>
+              <span class="nav-text">My Agent</span>
+            </a>
+          </li>
+          <li>
+            <a href="health.html">
+              <i class="fas fa-heartbeat nav-icon"></i>
+              <span class="nav-text">Health</span>
+            </a>
+          </li>
+          <li>
+            <a href="report.html">
+              <i class="fas fa-file-alt nav-icon"></i>
+              <span class="nav-text">Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html">
+              <i class="fas fa-gear nav-icon"></i>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </aside>
@@ -32,39 +69,168 @@
     <!-- Main Content -->
     <main class="main-content">
       <header class="header">
-        <h1>Settings</h1>
+        <h1 style="color: #333333;">Settings</h1>
+        <p class="date" style="color: #666666;">Today's Date: <span id="currentDate"></span></p>
       </header>
 
-      <!-- Profile Section -->
-      <section class="profile-section">
-        <h2>Profile</h2>
-        <div class="profile-info">
-          <div class="profile-picture">
-            <img src="https://via.placeholder.com/100" alt="Profile Picture">
-            <button class="edit-button">Edit Picture</button>
+      <section class="dashboard-grid">
+        <!-- Profile Settings -->
+        <div class="card glass-effect" style="grid-column: span 2;">
+          <h3 style="color: #055ffc;">Profile Settings</h3>
+          <div class="profile-section">
+            <div class="profile-header">
+              <div class="profile-image">
+                <img src="https://via.placeholder.com/100" alt="Profile Picture">
+                <button class="action-btn">
+                  <i class="fas fa-camera"></i> Change Photo
+                </button>
+              </div>
+              <div class="profile-info">
+                <h4 style="color: #333333;">John Doe</h4>
+                <p style="color: #666666;">john.doe@example.com</p>
+              </div>
+            </div>
+            <div class="profile-form">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="John Doe" class="settings-input">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="john.doe@example.com" class="settings-input">
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" value="+1 (555) 123-4567" class="settings-input">
+              </div>
+            </div>
           </div>
-          <form class="profile-form">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter your full name">
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Notifications</h3>
+          <div class="settings-list">
+            <div class="setting-item">
+              <div class="setting-info">
+                <span class="setting-title">Email Notifications</span>
+                <span class="setting-desc" style="color: #666666;">Receive updates via email</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email">
+            <div class="setting-item">
+              <div class="setting-info">
+                <span class="setting-title">Push Notifications</span>
+                <span class="setting-desc" style="color: #666666;">Receive push alerts</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            <div class="setting-item">
+              <div class="setting-info">
+                <span class="setting-title">Task Reminders</span>
+                <span class="setting-desc" style="color: #666666;">Get task deadline alerts</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <div class="form-group">
-              <label for="occupation">Occupation</label>
-              <input type="text" id="occupation" name="occupation" placeholder="Enter your occupation">
+          </div>
+        </div>
+
+        <!-- Theme Settings -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Appearance</h3>
+          <div class="theme-settings">
+            <div class="setting-item">
+              <span class="setting-title">Dark Mode</span>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <button type="submit" class="save-button">Save Changes</button>
-          </form>
+            <div class="color-themes">
+              <span class="setting-title">Color Theme</span>
+              <div class="color-options">
+                <button class="color-option" style="background-color: #055ffc;"></button>
+                <button class="color-option" style="background-color: #28a745;"></button>
+                <button class="color-option" style="background-color: #dc3545;"></button>
+                <button class="color-option" style="background-color: #ffc107;"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy Settings -->
+        <div class="card glass-effect">
+          <h3 style="color: #055ffc;">Privacy</h3>
+          <div class="settings-list">
+            <div class="setting-item">
+              <div class="setting-info">
+                <span class="setting-title">Profile Visibility</span>
+                <span class="setting-desc" style="color: #666666;">Make profile public</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="setting-item">
+              <div class="setting-info">
+                <span class="setting-title">Activity Status</span>
+                <span class="setting-desc" style="color: #666666;">Show online status</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="card glass-effect" style="grid-column: span 2;">
+          <div class="settings-actions">
+            <button class="action-btn">
+              <i class="fas fa-save"></i> Save Changes
+            </button>
+            <button class="action-btn" style="background-color: #666666;">
+              <i class="fas fa-undo"></i> Reset Settings
+            </button>
+          </div>
         </div>
       </section>
     </main>
   </div>
+
+  <script>
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      const icon = sidebarToggle.querySelector('i');
+      if (sidebar.classList.contains('collapsed')) {
+        icon.classList.replace('fa-chevron-left', 'fa-chevron-right');
+      } else {
+        icon.classList.replace('fa-chevron-right', 'fa-chevron-left');
+      }
+    });
+
+    // Set current date
+    const currentDate = new Date().toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    document.getElementById('currentDate').textContent = currentDate;
+  </script>
 </body>
 </html>
