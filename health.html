@@ -71,245 +71,241 @@
       </header>
 
       <section class="dashboard-grid">
-        <!-- Overall Health Score -->
-        <div class="card glass-effect">
-          <h3 style="color: #055ffc;">Health Score</h3>
-          <div class="progress-circle">
-            <span class="percentage" style="color: #055ffc;">92%</span>
+        <!-- Header Section -->
+        <div class="header-section">
+          <!-- Overall Health Score -->
+          <div class="card glass-effect">
+            <h3 style="color: #055ffc;">Health Score</h3>
+            <div class="progress-circle">
+              <span class="percentage" style="color: #055ffc;">92%</span>
+            </div>
+            <p class="subtext" style="color: #666666;">Overall Health Rating</p>
           </div>
-          <p class="subtext" style="color: #666666;">Overall Health Rating</p>
-        </div>
 
-        <!-- Vital Signs -->
-        <div class="card glass-effect">
-          <h3 style="color: #055ffc;">Vital Signs</h3>
-          <div class="vitals-grid">
-            <div class="vital-metric">
-              <i class="fas fa-heartbeat" style="color: #055ffc;"></i>
-              <span class="vital-value">72 BPM</span>
-              <span class="vital-label">Heart Rate</span>
-            </div>
-            <div class="vital-metric">
-              <i class="fas fa-lungs" style="color: #055ffc;"></i>
-              <span class="vital-value">98%</span>
-              <span class="vital-label">Oxygen</span>
-            </div>
-            <div class="vital-metric">
-              <i class="fas fa-weight" style="color: #055ffc;"></i>
-              <span class="vital-value">165 lbs</span>
-              <span class="vital-label">Weight</span>
-            </div>
-            <div class="vital-metric">
-              <i class="fas fa-temperature-high" style="color: #055ffc;"></i>
-              <span class="vital-value">98.6°F</span>
-              <span class="vital-label">Temperature</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Activity Tracking -->
-        <div class="card glass-effect">
-          <h3 style="color: #055ffc;">Daily Activity</h3>
-          <div class="activity-metrics">
-            <div class="activity-item">
-              <i class="fas fa-walking" style="color: #055ffc;"></i>
-              <span class="activity-value">8,547</span>
-              <span class="activity-label">Steps</span>
-            </div>
-            <div class="activity-item">
-              <i class="fas fa-fire" style="color: #055ffc;"></i>
-              <span class="activity-value">2,450</span>
-              <span class="activity-label">Calories</span>
-            </div>
-            <div class="activity-item">
-              <i class="fas fa-running" style="color: #055ffc;"></i>
-              <span class="activity-value">5.2</span>
-              <span class="activity-label">Miles</span>
+          <!-- Vital Signs -->
+          <div class="card glass-effect">
+            <h3 style="color: #055ffc;">Vital Signs</h3>
+            <div class="vitals-grid">
+              <div class="vital-metric">
+                <i class="fas fa-heartbeat" style="color: #055ffc;"></i>
+                <span class="vital-value">72 BPM</span>
+                <span class="vital-label">Heart Rate</span>
+              </div>
+              <div class="vital-metric">
+                <i class="fas fa-lungs" style="color: #055ffc;"></i>
+                <span class="vital-value">98%</span>
+                <span class="vital-label">Oxygen</span>
+              </div>
+              <div class="vital-metric">
+                <i class="fas fa-weight" style="color: #055ffc;"></i>
+                <span class="vital-value">165 lbs</span>
+                <span class="vital-label">Weight</span>
+              </div>
+              <div class="vital-metric">
+                <i class="fas fa-temperature-high" style="color: #055ffc;"></i>
+                <span class="vital-value">98.6°F</span>
+                <span class="vital-label">Temperature</span>
+              </div>
             </div>
           </div>
+
+          <!-- Activity Tracking -->
+          <div class="card glass-effect">
+            <h3 style="color: #055ffc;">Daily Activity</h3>
+            <div class="activity-metrics">
+              <div class="activity-item">
+                <i class="fas fa-walking" style="color: #055ffc;"></i>
+                <span class="activity-value">8,547</span>
+                <span class="activity-label">Steps</span>
+              </div>
+              <div class="activity-item">
+                <i class="fas fa-fire" style="color: #055ffc;"></i>
+                <span class="activity-value">2,450</span>
+                <span class="activity-label">Calories</span>
+              </div>
+              <div class="activity-item">
+                <i class="fas fa-running" style="color: #055ffc;"></i>
+                <span class="activity-value">5.2</span>
+                <span class="activity-label">Miles</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Sleep Schedule -->
-        <div class="card glass-effect" style="grid-column: span 2;">
-            <h3 style="color: #055ffc;">Sleep Schedule</h3>
-            <div class="sleep-schedule">
-                <div class="schedule-header">
-                    <div class="day-labels">
-                        <span>Mon</span>
-                        <span>Tue</span>
-                        <span>Wed</span>
-                        <span>Thu</span>
-                        <span>Fri</span>
-                        <span>Sat</span>
-                        <span>Sun</span>
-                    </div>
-                </div>
-                <div class="schedule-grid">
+        <!-- Full-width Carousel Container -->
+        <div class="carousel-container glass-effect">
+          <div class="carousel-navigation">
+            <button class="carousel-btn active" data-target="sleep">Sleep Schedule</button>
+            <button class="carousel-btn" data-target="nutrition">Nutrition Tracking</button>
+          </div>
+          
+          <div class="carousel-content">
+            <div class="carousel-item active" id="sleep">
+              <h3 style="color: #055ffc;">Sleep Schedule</h3>
+              <div class="schedule-content">
+                <div class="schedule-main">
+                  <div class="schedule-grid">
                     <div class="time-labels">
-                        <span>10 PM</span>
-                        <span>11 PM</span>
-                        <span>12 AM</span>
-                        <span>1 AM</span>
-                        <span>2 AM</span>
-                        <span>3 AM</span>
-                        <span>4 AM</span>
-                        <span>5 AM</span>
-                        <span>6 AM</span>
-                        <span>7 AM</span>
-                        <span>8 AM</span>
+                      <span>10 PM</span>
+                      <span>11 PM</span>
+                      <span>12 AM</span>
+                      <span>1 AM</span>
+                      <span>2 AM</span>
+                      <span>3 AM</span>
+                      <span>4 AM</span>
+                      <span>5 AM</span>
+                      <span>6 AM</span>
+                      <span>7 AM</span>
+                      <span>8 AM</span>
                     </div>
                     <div class="sleep-blocks">
-                        <!-- Sleep blocks for each day -->
-                        <div class="sleep-block" style="grid-column: 1; grid-row: 2 / 9;"></div>
-                        <div class="sleep-block" style="grid-column: 2; grid-row: 3 / 10;"></div>
-                        <div class="sleep-block" style="grid-column: 3; grid-row: 2 / 8;"></div>
-                        <div class="sleep-block" style="grid-column: 4; grid-row: 2 / 9;"></div>
-                        <div class="sleep-block" style="grid-column: 5; grid-row: 4 / 11;"></div>
-                        <div class="sleep-block" style="grid-column: 6; grid-row: 5 / 12;"></div>
-                        <div class="sleep-block" style="grid-column: 7; grid-row: 3 / 10;"></div>
+                      <div class="sleep-block" style="grid-column: 1; grid-row: 2 / 9;"></div>
+                      <div class="sleep-block" style="grid-column: 2; grid-row: 3 / 10;"></div>
+                      <div class="sleep-block" style="grid-column: 3; grid-row: 2 / 8;"></div>
+                      <div class="sleep-block" style="grid-column: 4; grid-row: 2 / 9;"></div>
+                      <div class="sleep-block" style="grid-column: 5; grid-row: 4 / 11;"></div>
+                      <div class="sleep-block" style="grid-column: 6; grid-row: 5 / 12;"></div>
+                      <div class="sleep-block" style="grid-column: 7; grid-row: 3 / 10;"></div>
                     </div>
+                  </div>
                 </div>
                 <div class="schedule-stats">
-                    <div class="stat-item">
-                        <i class="fas fa-moon" style="color: #055ffc;"></i>
-                        <div class="stat-details">
-                            <span class="stat-label">Average Bedtime</span>
-                            <span class="stat-value">11:30 PM</span>
-                        </div>
+                  <div class="stat-item">
+                    <i class="fas fa-moon" style="color: #055ffc;"></i>
+                    <div class="stat-details">
+                      <span class="stat-label">Average Bedtime</span>
+                      <span class="stat-value">11:30 PM</span>
                     </div>
-                    <div class="stat-item">
-                        <i class="fas fa-sun" style="color: #055ffc;"></i>
-                        <div class="stat-details">
-                            <span class="stat-label">Average Wake Time</span>
-                            <span class="stat-value">7:15 AM</span>
-                        </div>
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-sun" style="color: #055ffc;"></i>
+                    <div class="stat-details">
+                      <span class="stat-label">Average Wake Time</span>
+                      <span class="stat-value">7:15 AM</span>
                     </div>
-                    <div class="stat-item">
-                        <i class="fas fa-clock" style="color: #055ffc;"></i>
-                        <div class="stat-details">
-                            <span class="stat-label">Average Duration</span>
-                            <span class="stat-value">7h 45m</span>
-                        </div>
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-clock" style="color: #055ffc;"></i>
+                    <div class="stat-details">
+                      <span class="stat-label">Average Duration</span>
+                      <span class="stat-value">7h 45m</span>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
 
-        <!-- Nutrition Tracking -->
-        <div class="card glass-effect" style="grid-column: span 2;">
-            <h3 style="color: #055ffc;">Nutrition Tracking</h3>
-            <div class="nutrition-container">
-                <!-- Metrics Section -->
-                <div class="nutrition-metrics">
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <i class="fas fa-fire" style="color: #055ffc;"></i>
-                            <span class="metric-title">Calories</span>
-                        </div>
-                        <div class="metric-progress">
-                            <div class="circular-progress">
-                                <span class="progress-value">75%</span>
-                            </div>
-                            <span class="metric-details">1,850 / 2,400</span>
-                        </div>
+            <div class="carousel-item" id="nutrition">
+              <h3 style="color: #055ffc;">Nutrition Tracking</h3>
+              <div class="nutrition-metrics">
+                <div class="metric-card">
+                  <div class="metric-header">
+                    <i class="fas fa-fire" style="color: #055ffc;"></i>
+                    <span class="metric-title">Calories</span>
+                  </div>
+                  <div class="metric-progress">
+                    <div class="circular-progress">
+                      <span class="progress-value">75%</span>
                     </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <i class="fas fa-dumbbell" style="color: #055ffc;"></i>
-                            <span class="metric-title">Protein</span>
-                        </div>
-                        <div class="metric-progress">
-                            <div class="circular-progress">
-                                <span class="progress-value">85%</span>
-                            </div>
-                            <span class="metric-details">85g / 100g</span>
-                        </div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <i class="fas fa-glass-water" style="color: #055ffc;"></i>
-                            <span class="metric-title">Water</span>
-                        </div>
-                        <div class="metric-progress">
-                            <div class="circular-progress">
-                                <span class="progress-value">60%</span>
-                            </div>
-                            <span class="metric-details">1.8L / 3L</span>
-                        </div>
-                    </div>
+                    <span class="metric-details">1,850 / 2,400</span>
+                  </div>
                 </div>
 
-                <!-- Meals Section -->
-                <div class="meals-section">
-                    <div class="meal-card">
-                        <div class="meal-header">
-                            <i class="fas fa-sun" style="color: #055ffc;"></i>
-                            <h4>Breakfast</h4>
-                            <span class="meal-time">8:00 AM</span>
-                        </div>
-                        <div class="meal-items">
-                            <div class="meal-item">
-                                <span>Oatmeal with Berries</span>
-                                <span class="meal-calories">320 cal</span>
-                            </div>
-                            <div class="meal-item">
-                                <span>Greek Yogurt</span>
-                                <span class="meal-calories">150 cal</span>
-                            </div>
-                            <div class="meal-item">
-                                <span>Banana</span>
-                                <span class="meal-calories">105 cal</span>
-                            </div>
-                        </div>
+                <div class="metric-card">
+                  <div class="metric-header">
+                    <i class="fas fa-dumbbell" style="color: #055ffc;"></i>
+                    <span class="metric-title">Protein</span>
+                  </div>
+                  <div class="metric-progress">
+                    <div class="circular-progress">
+                      <span class="progress-value">85%</span>
                     </div>
-
-                    <div class="meal-card">
-                        <div class="meal-header">
-                            <i class="fas fa-cloud-sun" style="color: #055ffc;"></i>
-                            <h4>Lunch</h4>
-                            <span class="meal-time">12:30 PM</span>
-                        </div>
-                        <div class="meal-items">
-                            <div class="meal-item">
-                                <span>Grilled Chicken Salad</span>
-                                <span class="meal-calories">450 cal</span>
-                            </div>
-                            <div class="meal-item">
-                                <span>Quinoa</span>
-                                <span class="meal-calories">220 cal</span>
-                            </div>
-                            <div class="meal-item">
-                                <span>Apple</span>
-                                <span class="meal-calories">95 cal</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="meal-card">
-                        <div class="meal-header">
-                            <i class="fas fa-moon" style="color: #055ffc;"></i>
-                            <h4>Dinner</h4>
-                            <span class="meal-time">7:00 PM</span>
-                        </div>
-                        <div class="meal-items">
-                            <div class="meal-item">
-                                <span>Salmon Fillet</span>
-                                <span class="meal-calories">410 cal</span>
-                            </div>
-                            <div class="meal-item">
-                                <span>Roasted Vegetables</span>
-                                <span class="meal-calories">150 cal</span>
-                            </div>
-                            <div class="meal-item">
-                                <span>Brown Rice</span>
-                                <span class="meal-calories">220 cal</span>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="metric-details">85g / 100g</span>
+                  </div>
                 </div>
+
+                <div class="metric-card">
+                  <div class="metric-header">
+                    <i class="fas fa-glass-water" style="color: #055ffc;"></i>
+                    <span class="metric-title">Water</span>
+                  </div>
+                  <div class="metric-progress">
+                    <div class="circular-progress">
+                      <span class="progress-value">60%</span>
+                    </div>
+                    <span class="metric-details">1.8L / 3L</span>
+                  </div>
+                </div>
+              </div>
+              <div class="meals-section">
+                <div class="meal-card">
+                  <div class="meal-header">
+                    <i class="fas fa-sun" style="color: #055ffc;"></i>
+                    <h4>Breakfast</h4>
+                    <span class="meal-time">8:00 AM</span>
+                  </div>
+                  <div class="meal-items">
+                    <div class="meal-item">
+                      <span>Oatmeal with Berries</span>
+                      <span class="meal-calories">320 cal</span>
+                    </div>
+                    <div class="meal-item">
+                      <span>Greek Yogurt</span>
+                      <span class="meal-calories">150 cal</span>
+                    </div>
+                    <div class="meal-item">
+                      <span>Banana</span>
+                      <span class="meal-calories">105 cal</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="meal-card">
+                  <div class="meal-header">
+                    <i class="fas fa-cloud-sun" style="color: #055ffc;"></i>
+                    <h4>Lunch</h4>
+                    <span class="meal-time">12:30 PM</span>
+                  </div>
+                  <div class="meal-items">
+                    <div class="meal-item">
+                      <span>Grilled Chicken Salad</span>
+                      <span class="meal-calories">450 cal</span>
+                    </div>
+                    <div class="meal-item">
+                      <span>Quinoa</span>
+                      <span class="meal-calories">220 cal</span>
+                    </div>
+                    <div class="meal-item">
+                      <span>Apple</span>
+                      <span class="meal-calories">95 cal</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="meal-card">
+                  <div class="meal-header">
+                    <i class="fas fa-moon" style="color: #055ffc;"></i>
+                    <h4>Dinner</h4>
+                    <span class="meal-time">7:00 PM</span>
+                  </div>
+                  <div class="meal-items">
+                    <div class="meal-item">
+                      <span>Salmon Fillet</span>
+                      <span class="meal-calories">410 cal</span>
+                    </div>
+                    <div class="meal-item">
+                      <span>Roasted Vegetables</span>
+                      <span class="meal-calories">150 cal</span>
+                    </div>
+                    <div class="meal-item">
+                      <span>Brown Rice</span>
+                      <span class="meal-calories">220 cal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
     </main>
@@ -342,262 +338,621 @@
       const progress = card.querySelector('.progress-value').textContent;
       card.querySelector('.circular-progress').style.setProperty('--progress', progress);
     });
+
+    // Add carousel functionality
+    document.querySelectorAll('.carousel-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and items
+        document.querySelectorAll('.carousel-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.carousel-item').forEach(item => item.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Show corresponding content
+        const target = button.dataset.target;
+        document.getElementById(target).classList.add('active');
+      });
+    });
   </script>
 
   <style>
+    /* Container and Sidebar Layout */
+    .container {
+      display: flex;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 250px;
+      background: white;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    /* Main Content Layout */
+    .main-content {
+      flex: 1;
+      min-height: 100vh;
+      background: #f5f7fa;
+      position: relative;
+    }
+
+    /* Sidebar Toggle Button */
+    .sidebar-toggle {
+      position: absolute;
+      right: -15px;
+      top: 20px;
+      width: 30px;
+      height: 30px;
+      background: #055ffc;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      padding: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(5, 95, 252, 0.3);
+    }
+
+    .sidebar-toggle i {
+      font-size: 12px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar.collapsed .sidebar-toggle i {
+      transform: rotate(180deg);
+    }
+
+    /* Enhance toggle button hover state */
+    .sidebar-toggle:hover {
+      background: #0452d9;
+      box-shadow: 0 2px 8px rgba(5, 95, 252, 0.4);
+    }
+
+    /* Logo Container */
+    .logo {
+      margin-bottom: 30px;
+      padding: 10px 0;
+    }
+
+    .logo img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Navigation Styling */
+    .sidebar nav {
+      flex: 1;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      color: #666666;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background: rgba(5, 95, 252, 0.1);
+      color: #055ffc;
+    }
+
+    .nav-icon {
+      width: 20px;
+      text-align: center;
+      margin-right: 15px;
+    }
+
+    /* Handle nav text in collapsed state */
+    .sidebar.collapsed .nav-text {
+      display: none;
+    }
+
+    .sidebar.collapsed .logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .sidebar.collapsed .logo img {
+      width: 40px;
+    }
+
+    /* Update dashboard grid layout */
+    .dashboard-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 30px;
+      min-height: 100vh;
+    }
+
+    /* Header section styling - Remove fixed height */
+    .header-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 30px;
+      min-height: 300px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Card styling */
+    .card {
+      padding: 25px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Carousel container - More flexible height */
+    .carousel-container {
+      width: 100%;
+      min-height: 600px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Fix carousel content and items */
+    .carousel-content {
+      height: 100%;
+    }
+
+    .carousel-item {
+      display: none;
+      padding: 30px;
+      height: 100%;
+    }
+
+    .carousel-item.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation buttons styling */
+    .carousel-navigation {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border-bottom: 1px solid rgba(5, 95, 252, 0.1);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .carousel-btn {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      color: #666666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(5, 95, 252, 0.05);
+      color: #055ffc;
+    }
+
+    .carousel-btn.active {
+      background: rgba(5, 95, 252, 0.1);
+      color: #055ffc;
+    }
+
+    /* Sleep Schedule and Nutrition sections */
+    .sleep-schedule,
+    .nutrition-container {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    /* Glass effect */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      border-radius: 15px;
+    }
+
+    /* Section specific styling */
+    .schedule-main,
+    .nutrition-metrics,
+    .schedule-stats,
+    .meals-section {
+      background: rgba(5, 95, 252, 0.02);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    /* Ensure proper scrolling for long content */
+    .carousel-item {
+      overflow-y: auto;
+    }
+
+    /* Vitals grid for header layout */
+    .vitals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      height: 100%;
+      margin-top: 20px;
+    }
+
+    .vital-metric {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background: rgba(5, 95, 252, 0.03);
+      border-radius: 12px;
+    }
+
+    /* Activity metrics layout */
+    .activity-metrics {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 15px;
+      height: 100%;
+      margin-top: 20px;
+    }
+
+    .activity-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background: rgba(5, 95, 252, 0.03);
+      border-radius: 12px;
+    }
+
+    /* Progress circle adjustments */
+    .progress-circle {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+    }
+
     .sleep-schedule {
-        padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      height: 100%;
+    }
+
+    .schedule-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      height: 100%;
+    }
+
+    .schedule-main {
+      flex: 1;
+      background: rgba(5, 95, 252, 0.02);
+      border-radius: 12px;
+      padding: 25px;
     }
 
     .schedule-header {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     .day-labels {
-        display: grid;
-        grid-template-columns: 60px repeat(7, 1fr);
-        gap: 10px;
-        text-align: center;
-        font-weight: 500;
-        color: #666666;
+      display: grid;
+      grid-template-columns: 60px repeat(7, 1fr);
+      gap: 10px;
+      text-align: center;
+      font-weight: 500;
+      color: #666666;
     }
 
     .schedule-grid {
-        display: grid;
-        grid-template-columns: 60px 1fr;
-        gap: 10px;
-        margin-bottom: 20px;
-        background: rgba(5, 95, 252, 0.02);
-        border-radius: 12px;
-        padding: 15px;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
     }
 
     .time-labels {
-        display: grid;
-        grid-template-rows: repeat(11, 30px);
-        gap: 5px;
-        color: #666666;
-        font-size: 0.9rem;
+      display: grid;
+      grid-template-rows: repeat(11, 30px);
+      gap: 5px;
+      color: #666666;
+      font-size: 0.9rem;
     }
 
     .sleep-blocks {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(11, 30px);
-        gap: 10px;
-        position: relative;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(11, 30px);
+      gap: 8px;
     }
 
     .sleep-block {
-        background: linear-gradient(145deg, rgba(5, 95, 252, 0.15), rgba(5, 95, 252, 0.05));
-        border-left: 3px solid #055ffc;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(5, 95, 252, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
+      background: linear-gradient(145deg, rgba(5, 95, 252, 0.15), rgba(5, 95, 252, 0.05));
+      border-left: 3px solid #055ffc;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(5, 95, 252, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .sleep-block::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
-        border-radius: 8px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+      border-radius: 8px;
     }
 
     .sleep-block:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 95, 252, 0.15);
-        background: linear-gradient(145deg, rgba(5, 95, 252, 0.2), rgba(5, 95, 252, 0.1));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(5, 95, 252, 0.15);
+      background: linear-gradient(145deg, rgba(5, 95, 252, 0.2), rgba(5, 95, 252, 0.1));
     }
 
     .schedule-stats {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(5, 95, 252, 0.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 25px;
+      background: rgba(5, 95, 252, 0.02);
+      border-radius: 12px;
     }
 
     .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 10px 20px;
-        background: rgba(5, 95, 252, 0.03);
-        border-radius: 12px;
-        transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 25px;
+      background: rgba(5, 95, 252, 0.03);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      flex: 1;
     }
 
     .stat-item:hover {
-        background: rgba(5, 95, 252, 0.06);
-        transform: translateY(-2px);
+      background: rgba(5, 95, 252, 0.06);
+      transform: translateY(-2px);
     }
 
     .stat-details {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
 
     .stat-label {
-        color: #666666;
-        font-size: 0.9rem;
+      color: #666666;
+      font-size: 0.9rem;
     }
 
     .stat-value {
-        color: #333333;
-        font-weight: 500;
-        font-size: 1.1rem;
+      color: #333333;
+      font-weight: 500;
+      font-size: 1.1rem;
     }
 
     .nutrition-container {
-        display: grid;
-        gap: 20px;
-        padding: 15px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      height: 100%;
     }
 
     .nutrition-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
-        background: rgba(5, 95, 252, 0.02);
-        border-radius: 12px;
-        margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 25px;
+      background: rgba(5, 95, 252, 0.02);
+      border-radius: 12px;
     }
 
     .metric-card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(5, 95, 252, 0.05);
-        transition: all 0.3s ease;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(5, 95, 252, 0.05);
+      transition: all 0.3s ease;
     }
 
     .metric-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 95, 252, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(5, 95, 252, 0.1);
     }
 
     .metric-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
     }
 
     .metric-title {
-        font-weight: 500;
-        color: #333333;
-        font-size: 1.1rem;
+      font-weight: 500;
+      color: #333333;
+      font-size: 1.1rem;
     }
 
     .metric-progress {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
 
     .circular-progress {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: conic-gradient(
-            #055ffc var(--progress), 
-            rgba(5, 95, 252, 0.1) var(--progress)
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #055ffc var(--progress), 
+        rgba(5, 95, 252, 0.1) var(--progress)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
     .circular-progress::before {
-        content: '';
-        position: absolute;
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        background: white;
+      content: '';
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: white;
     }
 
     .progress-value {
-        position: relative;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #055ffc;
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #055ffc;
     }
 
     .metric-details {
-        color: #666666;
-        font-size: 0.9rem;
+      color: #666666;
+      font-size: 0.9rem;
     }
 
     .meals-section {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 25px;
+      background: rgba(5, 95, 252, 0.02);
+      border-radius: 12px;
     }
 
     .meal-card {
-        background: rgba(5, 95, 252, 0.02);
-        border-radius: 12px;
-        padding: 15px;
-        transition: all 0.3s ease;
-    }
-
-    .meal-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(5, 95, 252, 0.1);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(5, 95, 252, 0.05);
     }
 
     .meal-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(5, 95, 252, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(5, 95, 252, 0.1);
     }
 
     .meal-header h4 {
-        margin: 0;
-        color: #333333;
-        flex-grow: 1;
+      margin: 0;
+      color: #333333;
+      flex-grow: 1;
     }
 
     .meal-time {
-        color: #666666;
-        font-size: 0.9rem;
+      color: #666666;
+      font-size: 0.9rem;
     }
 
     .meal-items {
-        display: grid;
-        gap: 10px;
+      display: grid;
+      gap: 10px;
     }
 
     .meal-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px;
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 8px;
-        transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      background: rgba(5, 95, 252, 0.02);
+      border-radius: 8px;
+      transition: all 0.2s ease;
     }
 
     .meal-item:hover {
-        background: rgba(5, 95, 252, 0.05);
+      background: rgba(5, 95, 252, 0.05);
     }
 
     .meal-calories {
-        color: #666666;
-        font-size: 0.9rem;
+      color: #666666;
+      font-size: 0.9rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #055ffc;
+      margin-bottom: 15px;
+    }
+
+    /* Ensure proper spacing in carousel items */
+    .carousel-item {
+      padding: 30px;
+      gap: 30px;
+    }
+
+    /* Update the carousel navigation to stay at top */
+    .carousel-navigation {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Update Sleep Schedule HTML Structure */
+    .carousel-item#sleep {
+      display: none;
+    }
+
+    .carousel-item#sleep.active {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
   </style>
 </body>
